@@ -5,3 +5,32 @@ spring:
     config:
       enabled: true
       uri: http://localhost:3000
+
+# MySQL Data Source Configuration
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/legizlawyer
+    username: root
+    password: admin
+    # MySQL Dialect configuration
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      dll-auto: update
+
+  # Logging Level Configuration
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type: TRACE
+  #Swagger
+springdoc:
+  api-docs:
+    path: /legiz-lawyer-api-docs
+  swagger-ui:
+    path: /legiz-lawyer-api-docs-ui.html
