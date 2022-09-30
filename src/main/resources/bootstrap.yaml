@@ -1,0 +1,7 @@
+spring:
+  application:
+    name=lawyer-service
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:3000
