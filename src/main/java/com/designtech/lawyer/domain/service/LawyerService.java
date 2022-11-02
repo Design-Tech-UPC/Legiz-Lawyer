@@ -11,4 +11,6 @@ public interface LawyerService {
     Page<Lawyer> getAllLawyersByTypeSpecialityId(Long typeSpecialtyId, Pageable pageable);
     ResponseEntity<?> deleteLawyer(Long typeSpecialtyId, Long lawyerId);
     Page<Lawyer> getAllLawyer(Pageable pageable);
+    boolean existById(Long lawyerId);
+    Lawyer findById(Long lawyerId);
 }

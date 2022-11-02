@@ -51,4 +51,15 @@ public class LawyerServiceImpl implements LawyerService {
 	public Page<Lawyer> getAllLawyer(Pageable pageable) {
 		return lawyerRepository.findAll(pageable);
 	}
+
+	@Override
+	public boolean existById(Long lawyerId) {
+		return lawyerRepository.existsById(lawyerId);
+	}
+
+	@Override
+	public Lawyer findById(Long lawyerId) {
+		Lawyer lawyer = lawyerRepository.findById(lawyerId).orElseThrow(()->new ResourceNotFoundException("Lawyear","Id",lawyerId));
+		return lawyer;
+	}
 }
